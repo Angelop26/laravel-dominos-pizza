@@ -19,11 +19,10 @@ class PizzasTableSeeder extends Seeder
         for ($i = 0; $i < 12; $i++) {
             $pizza = new Pizza();
             $pizza->price = $faker->numberBetween(6, 12);
-            $pizza->name = $faker->name();
+            $pizza->name = $faker->randomElement(['margherita', 'vesuvio', 'burratosa', 'gitaddpush', 'diavola', 'capricciosa', 'tonno e cipolla']);
             $pizza->formato = $faker->randomElement(['mignon', 'normale', 'maxi', 'famiglia']);
-            $pizza->description=$faker->text(10);
+            $pizza->description = $faker->text(20);
             $pizza->save();
-
         }
     }
 }
