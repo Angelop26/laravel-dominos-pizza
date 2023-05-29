@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Pizza;
 use Illuminate\Http\Request;
 
-class PizzaDetailsController extends Controller
+class OurPizzasController extends Controller
 {
     public function index()
     {
         $pizzas = Pizza::all();
-        return view('pages.pizza-details', compact('pizzas'));
+        return view('pages.our-pizzas', compact('pizzas'));
     }
 }

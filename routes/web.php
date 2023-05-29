@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\PizzaController;
-use App\Http\Controllers\Guest\PizzaDetailsController;
+use App\Http\Controllers\Guest\OurPizzasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +16,4 @@ use App\Http\Controllers\Guest\PizzaDetailsController;
 */
 
 Route::get('/', [PizzaController::class, 'index'])->name('welcome');
-Route::get('/pizzas', [PizzaDetailsController::class, 'index'])->name('pizza-details');
+Route::get('/pizzas', [OurPizzasController::class, 'index'])->name('pizza-details');

@@ -11,11 +11,13 @@
                 @foreach ($pizzas as $pizza)
                     <div class="col  mb-4">
                         <div class="card h-100">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column">
+                                <img class="card-img-top"
+                                    src="https://image.spreadshirtmedia.net/image-server/v1/products/T1459A839PA4459PT28D172562359W8333H10000/views/1,width=550,height=550,appearanceId=839,backgroundColor=F2F2F2/gioco-sulla-scatola-di-pizza-vuota-umorismo-da-scherzo-del-giocatore-adesivo.jpg"
+                                    alt="pizza-img">
                                 <h5 class="card-title">Pizza {{ $pizza->name }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">{{ $pizza->formato }}</h6>
-                                <p class="card-text"></p>
-                                <a href="" class="btn btn-primary">Card link</a>
+                                <a href="" class="btn btn-primary mt-auto">Dettagli Pizza</a>
                             </div>
                         </div>
                     </div>
