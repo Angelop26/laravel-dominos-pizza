@@ -12,7 +12,7 @@
                 {{$pizza->description}}
             </p>
               <a href="{{route('pizzas.index')}}" class="btn btn-primary">Torna al menù</a>
-              <a href="#" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+              <a href="{{route('pizzas.edit', $pizza->id)}}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
               <a href="#" class="btn btn-danger"><i class="fa-solid fa-circle-xmark"></i></a>
             </div>
           </div>
