@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\PizzaController;
+use App\Http\Controllers\Guest\WelcomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Guest\PizzaController;
-use App\Http\Controllers\Guest\OurPizzasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +15,5 @@ use App\Http\Controllers\Guest\OurPizzasController;
 |
 */
 
-Route::get('/', [PizzaController::class, 'index'])->name('welcome');
-Route::get('/pizzas', [OurPizzasController::class, 'index'])->name('pizza-details');
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+Route::resource('pizzas', PizzaController::class);
