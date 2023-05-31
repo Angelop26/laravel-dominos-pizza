@@ -14,7 +14,7 @@
             @foreach ($pizzas as $pizza)
                 <div class="col  mb-4">
                     <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
+                        <div class="card-body d-flex flex-column text-capitalize">
                             <img class="card-img-top mb-3"
                                 src="{{$pizza->image}}"
                                 alt="pizza-img">
@@ -26,7 +26,7 @@
                             <form action="{{route('pizzas.destroy', $pizza->id)}}" class="w-100" method="POST">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-danger w-100 mb-3">
+                                <button type="submit" class="btn btn-danger ms_btn_cancel w-100 mb-3" data-pizza-title="{{$pizza->name}}">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
                             </form>
@@ -35,6 +35,7 @@
                 </div>
             @endforeach
         </div>
+        @include('partials.modal_deleteform')
     </div>
 </main>
 @endsection
