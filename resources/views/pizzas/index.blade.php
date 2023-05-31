@@ -8,14 +8,14 @@
 <main>
     <div class="container">
         <div class="text-end">
-            <a href="{{route('pizzas.create')}}" class="btn btn-primary mb-3">Crea la tua pizza</a>
+            <a href="{{route('pizzas.create')}}" class="btn btn-primary my-3">Crea la tua pizza</a>
         </div>
         <div class="row row-cols-4">
             @foreach ($pizzas as $pizza)
                 <div class="col  mb-4">
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column text-capitalize">
-                            <img class="card-img-top mb-3"
+                            <img class="card-img-top mb-3 rounded-5"
                                 src="{{$pizza->image}}"
                                 alt="pizza-img">
                             <h5 class="card-title text-center">Pizza {{ $pizza->name }}</h5>

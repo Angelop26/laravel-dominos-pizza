@@ -5,10 +5,10 @@
     Welcome
 @endsection
 @section('content')
-    <main class="container">
-        <div class="jumbotron">
-
-        </div>
+<div class="container jumbotron">
+    
+</div>
+<main class="container">
         <div class="container">
             <div class="ms_container d-flex flex-column align-items-center">
                 <h1 class="text-center"> Dai un occhiata alle nostre pizze</h1>

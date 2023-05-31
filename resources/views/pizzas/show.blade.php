@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="card text-capitalize mx-auto" style="width: 300px">
+        <div class="card text-capitalize mx-auto " style="width: 300px">
             <img src="{{$pizza->image}}" class="card-img-top" alt="...">
             <div class="card-body  text-center">
               <h5 class="card-title text-capitalize">Pizza {{$pizza->name}}</h5>
