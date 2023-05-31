@@ -48,7 +48,8 @@ class PizzaController extends Controller
      */
     public function show($id)
     {
-        //
+        $pizza = Pizza::findOrFail($id);
+        return view('pizzas.show', compact('pizza'));
     }
 
     /**

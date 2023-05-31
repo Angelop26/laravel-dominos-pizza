@@ -17,7 +17,7 @@
                                     alt="pizza-img">
                                 <h5 class="card-title">Pizza {{ $pizza->name }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">{{ $pizza->formato }}</h6>
-                                <a href="" class="btn btn-primary mt-auto">Dettagli Pizza</a>
+                                <a href="{{route('pizzas.show', $pizza->id)}}" class="btn btn-primary mt-auto">Dettagli Pizza</a>
                             </div>
                         </div>
                     </div>
