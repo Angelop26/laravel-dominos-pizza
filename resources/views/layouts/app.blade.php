@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body class="bg-dark">
     {{-- header --}}
     @include('partials.header')
     {{-- main --}}

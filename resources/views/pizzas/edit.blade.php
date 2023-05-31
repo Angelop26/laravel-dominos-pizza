@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container text-white">
 
         <div class="my-3">
             <a class="btn btn-primary" href="{{ route('pizzas.index') }}">Vai al menù</a>
