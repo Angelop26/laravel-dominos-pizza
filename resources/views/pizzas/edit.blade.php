@@ -13,7 +13,11 @@
         <form action="{{ route('pizzas.update', $pizza->id) }}" method="POST">
             @method('PUT')
             @csrf
-
+            <div class="mb-3">
+                <label for="image" class="form-label">image</label>
+                <input type="text" class="form-control" id="image" name="image"
+                    value="{{ $pizza->image }}">
+            </div>
             <div class="mb-3">
                 <label for="name" class="form-label">name</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ $pizza->name }}">
