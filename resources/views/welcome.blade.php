@@ -5,7 +5,7 @@
     Welcome
 @endsection
 @section('content')
-    <main>
+    <main class="container">
         <div class="jumbotron">
 
         </div>
