@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="footer-top">
-        <h2 class="footer-title">GO GO AND GET ON THE LIST</h2>
+        <h2 class="footer-title">EAT AND GET ON THE LIST</h2>
         <p class="footer-paragraph">Join our mailing list and be the first to hear about the latest news and special events</p>
         <form class="footer-form">
             <div class="form-row">
@@ -14,7 +14,7 @@
 </footer>
 <div class="footer-bottom">
     <span class="footer-small-text">© TEAM1 2023</span>
-    <img class="footer-logo" src="{{Vite::asset('resources/img/2trasparent.png')}}" alt="Logo">
+    <a href=""><img class="footer-logo" src="{{Vite::asset('resources/img/2trasparent.png')}}" alt="Logo"></a>
     <span class="footer-small-text">
         <div class="social">
             <div class="social-links">

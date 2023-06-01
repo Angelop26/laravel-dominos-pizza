@@ -29,7 +29,7 @@
     <div class="box">S</div>
 </div>
 {{-- LOGO --}}
-  <img src="{{Vite::asset('resources/img/2.svg')}}" alt="Logo" class="logo">
+  <a href="{{route('welcome')}}"><img src="{{Vite::asset('resources/img/2.svg')}}" alt="Logo" class="logo"></a>
 
 
   {{-- ADMIN --}}
@@ -43,5 +43,4 @@
   
   
 </div>
-
 
