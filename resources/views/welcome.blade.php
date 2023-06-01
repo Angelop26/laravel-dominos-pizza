@@ -5,15 +5,31 @@
     Welcome
 @endsection
 @section('content')
-<div class="container jumbotron">
-    
-</div>
-<main class="container">
-        <div class="container">
-            <div class="ms_container d-flex flex-column align-items-center">
-                <h1 class="text-center"> Dai un occhiata alle nostre pizze</h1>
-                <a class="btn btn-secondary " href="{{ route('pizzas.index') }}">Mostra Pizze</a>
-            </div>
-        </div>
-    </main>
+
+{{-- JUMBOTRON --}}
+<body>
+    <div class="jumbotron">
+        <figure class="img" style="background-image:url(https://crazypizza.com/milan/uploads/sites/7/2022/03/IMG_3942.jpg); width: 100%; height: 800px;"></figure>
+        <h1>
+            PIZZA 1 PIZZA MILAN<br>
+            AUTHENTIC ITALIAN<br>
+            PIZZA
+        </h1>
+        <a href="#">MENU</a>
+        <a href="#">DELIVERY & TAKE AWAY</a>
+        
+    </div>
+</body>
+
+
+
+
+
+
+
+
+ 
+
+
+
 @endsection
