@@ -34,18 +34,22 @@
                     
                 </select>
             </div>
+            
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
                 <input type="text" class="form-control" id="price" name="price"
                     value="{{ $pizza->price }}">
             </div>
+            
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" name="description" id="description" rows="3">{{ $pizza->description }}</textarea>
             </div>
+            
             <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
                 @foreach ($ingredients as $ingredient)   
-                <input type="checkbox" class="btn-check" value="{{$ingredient->id}}" name="ingredients[]" id="ingredient/{{$ingredient->id}}">
+                <input type="checkbox" class="btn-check" @checked(old('ingredients_id') ? in_array($ingredient->id, old('ingredients_id', [])) : $pizza->ingredients->contains($ingredient) )
+                value="{{$ingredient->id}}" name="ingredients[]" id="ingredient/{{$ingredient->id}}">
                 <label class="btn btn-outline-primary"  for="ingredient/{{$ingredient->id}}">{{$ingredient->name}}</label>
                 @endforeach
             </div>
