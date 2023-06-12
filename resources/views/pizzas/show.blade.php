@@ -9,7 +9,11 @@
               <p class="card-subtitle">&euro;{{number_format($pizza->price, 2, ',', '.')}}</p>
               <p class="card-text">
                 {{$pizza->formato}} <br>
-                {{$pizza->description}}
+                {{$pizza->description}}<br>
+                @foreach ($pizza->ingredients as $single_ingredient)
+                    {{$single_ingredient->name}}{{$loop->last ? '': ','}}
+                @endforeach
+
             </p>
               <a href="{{route('pizzas.index')}}" class="btn btn-primary w-100 mb-3">Torna al menù</a>
               <a href="{{route('pizzas.edit', $pizza->id)}}" class="btn btn-warning w-100 mb-3"><i class="fa-solid fa-pen-to-square"></i></a>
