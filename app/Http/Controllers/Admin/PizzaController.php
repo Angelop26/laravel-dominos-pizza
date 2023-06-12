@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Ingredient;
 use App\Models\Pizza;
 use Illuminate\Http\Request;
 
@@ -64,8 +65,9 @@ class PizzaController extends Controller
      */
     public function edit($id)
     {
+        $ingredients = Ingredient::all();
         $pizza = Pizza::findOrFail($id);
-        return view('pizzas.edit', compact('pizza'));
+        return view('pizzas.edit', compact('pizza', 'ingredients'));
     }
 
     /**
@@ -79,6 +81,12 @@ class PizzaController extends Controller
     {
         $data = $request->all();
         $pizza = Pizza::findOrFail($id);
+
+        if ($request->has('ingredients')) {
+            $pizza->ingredients()->sync($data['ingredients']);
+        } else {
+            $pizza->ingredients()->detach();
+        }
         $pizza->update($data);
         return redirect()->route('pizzas.show', compact('pizza'));
     }
