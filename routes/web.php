@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\IngredientController;
 use App\Http\Controllers\Admin\PizzaController;
 use App\Http\Controllers\Guest\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -17,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::resource('pizzas', PizzaController::class);
+Route::resource('ingredients', IngredientController::class);
