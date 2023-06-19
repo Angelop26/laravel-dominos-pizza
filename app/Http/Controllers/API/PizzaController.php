@@ -8,13 +8,14 @@ use Illuminate\Http\Request;
 
 class PizzaController extends Controller
 {
-    public function index(){
-        $pizzas = Pizza::all();
+    public function index()
+    {
+        $pizzas = Pizza::with('ingredients')->get();
         return response()->json(
             [
-                'success'=> true,
-                'results'=> $pizzas
+                'success' => true,
+                'results' => $pizzas
             ]
-            );
+        );
     }
 }
