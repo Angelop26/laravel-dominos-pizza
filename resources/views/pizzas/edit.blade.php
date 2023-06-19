@@ -43,6 +43,12 @@
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" name="description" id="description" rows="3">{{ $pizza->description }}</textarea>
             </div>
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                @foreach ($ingredients as $ingredient)   
+                <input type="checkbox" class="btn-check" value="{{$ingredient->id}}" name="ingredients[]" id="ingredient/{{$ingredient->id}}">
+                <label class="btn btn-outline-primary"  for="ingredient/{{$ingredient->id}}">{{$ingredient->name}}</label>
+                @endforeach
+            </div>
 
             <button class="btn btn-primary" type="submit">Applica cambiamenti</button>
         </form>
