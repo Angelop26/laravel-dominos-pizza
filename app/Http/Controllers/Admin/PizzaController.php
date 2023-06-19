@@ -27,7 +27,8 @@ class PizzaController extends Controller
      */
     public function create()
     {
-        return view('pizzas.create');
+        $ingredients = Ingredient::all();
+        return view('pizzas.create', compact('ingredients'));
     }
 
     /**
@@ -39,10 +40,13 @@ class PizzaController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $pizza = new Pizza();
-        $pizza->fill($data);
-        $pizza->save();
-        return redirect()->route('pizzas.index');
+        $pizza = Pizza::create($data);
+        
+        if ($request->has('ingredients')) {
+            $pizza->ingredients()->attach($data['ingredients']);
+        }
+        
+        return redirect()->route('pizzas.index')->with('message', "$pizza->title è stata creata con successo" );
     }
 
     /**
@@ -100,6 +104,7 @@ class PizzaController extends Controller
     public function destroy($id)
     {
         $pizza = Pizza::findOrFail($id);
+        $pizza->ingredients()->detach();
         $pizza->delete();
         return redirect()->route('pizzas.index');
     }
